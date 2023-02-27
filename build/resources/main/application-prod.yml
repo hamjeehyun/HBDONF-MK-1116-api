@@ -1,0 +1,20 @@
+application:
+  workspace: AWS
+  port: 1116
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+database:
+  url: jdbc:mariadb://localhost:3306/hbd_onf_mk
+  username: root
+  password: root
+
+logging:
+  lovel: INFO
+
+firebase:
+  path: "/home/ubuntu/HBDONF-MK-1116-api/src/main/resources/hbdonf2-firebase-adminsdk-a9git-ec09084bf2.json"
+  key: "AIzaSyD-vL8LLTBPxP68QblmXVajD-KktCBpQtQ"

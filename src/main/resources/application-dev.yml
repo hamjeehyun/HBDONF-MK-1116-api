@@ -1,0 +1,22 @@
+application:
+  workspace: LOCAL
+  port: 1116
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+database:
+  url: jdbc:mariadb://localhost:3306/hbd_onf_mk
+  username:
+  password:
+
+logging:
+  lovel: DEBUG
+
+firebase:
+  path:
+  key:
+
+

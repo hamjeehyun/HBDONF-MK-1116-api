@@ -1,0 +1,48 @@
+server:
+  port: ${application.port}
+
+spring:
+  profiles:
+    active: prod
+  application:
+    name: 'hdbonf-mk'
+
+  datasource:
+    url: ${database.url}
+    username: ${database.username}
+    password: ${database.password}
+    hikari:
+      connection-timeout: 3000
+      maximum-pool-size: 150
+      max-lifetime: 1800000
+      pool-name: HikariCP
+
+logging:
+  slack:
+    location: ${application.workspace}
+    webhook-uri: https://hooks.slack.com/services/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
+  level:
+    org.hibernate:
+      type.descriptor.sql: trace #show parameter binding
+      SQL: ${logging.lovel}
+
+onf:
+  bizMessages:
+    ONF_0001 : "이미 등록한 메세지가 있습니다."
+    ONF_0002 : "140자 이상은 등록할 수 없습니다."
+    ONF_0003 : "등록 되지 않은 사용자 입니다."
+
+#eureka:
+#  client:
+#    service-url:
+#      enabled: 'true'
+#      defaultZone: http://localhost:8003/eureka/
+#    fetch-registry: 'true'
+#    enabled: 'true'
+#  instance:
+#    hostname: hdbonf-mk
+#    prefer-ip-address: 'true'
+
+firebase:
+  path: "src/main/resources/hbdonf2-firebase-adminsdk-a9git-ec09084bf2.json"
+  key: "AIzaSyD-vL8LLTBPxP68QblmXVajD-KktCBpQtQ"
